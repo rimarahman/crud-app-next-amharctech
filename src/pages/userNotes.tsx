@@ -100,7 +100,7 @@ export default function UserNotes() {
     setNoteToDelete(undefined);
     setShowDeleteDialog(false);
   };
-  
+
   return status === ("loading" || "unauthenticated") ? (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="animate-spin rounded-full border-t-4 border-blue-500 border-solid h-16 w-16"></div>
@@ -159,7 +159,7 @@ export default function UserNotes() {
                           fill="red"
                         ></path>{" "}
                         <path
-                          fill-rule="evenodd"
+                          fillrule-="evenodd"
                           d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
                           fill="red"
                         ></path>{" "}

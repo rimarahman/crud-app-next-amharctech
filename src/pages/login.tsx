@@ -59,14 +59,14 @@ function LoginForm() {
           )}
           <Box className="mb-4">
             <label className="block text-gray-600 text-sm font-medium mb-2">
-              Email
+              Username
             </label>
             <input
               name="email"
               value={formData.email}
               onChange={handleInputChange}
               className="w-full border-gray-300 border p-2 rounded-lg focus:ring focus:ring-blue-400"
-              placeholder="Enter your email"
+              placeholder="Enter your username"
             />
           </Box>
           <Box className="mb-4">

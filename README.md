@@ -28,6 +28,11 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+You can Login using 
+```
+ "username": "kminchelle",
+ "password": "0lelplR"
+```
 
 API routes can be accessed on [http://localhost:3000/api/](http://localhost:3000/api/).
 
