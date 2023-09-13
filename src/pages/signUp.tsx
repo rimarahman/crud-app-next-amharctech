@@ -1,13 +1,8 @@
-// components/SignupForm.tsx
+import { FormData } from "@/ts/interfaces";
 import { Box, Button } from "@radix-ui/themes";
 import Link from "next/link";
 import React, { useState, ChangeEvent, FormEvent } from "react";
 
-interface FormData {
-  name: string;
-  email: string;
-  password: string;
-}
 
 function SignupForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -16,9 +11,7 @@ function SignupForm() {
     password: "",
   });
 
-  const handleInputChange = (
-    e: ChangeEvent<HTMLInputElement>
-  ): void => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -26,14 +19,8 @@ function SignupForm() {
     });
   };
 
-  const handleSubmit = async (
-    e: FormEvent<HTMLFormElement>
-  ): Promise<void> => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-
-    // You can perform form validation here
-
-    // Prepare the data to send to your server
     const userData = {
       name: formData.name,
       email: formData.email,
@@ -41,7 +28,6 @@ function SignupForm() {
     };
 
     try {
-      // Send a POST request to your server to create the user
       const response = await fetch("/api/signup", {
         method: "POST",
         headers: {

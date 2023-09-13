@@ -13,3 +13,16 @@ export interface ApiResponse {
   token?: string;
   username: string
 }
+
+
+export interface LoginFormData {
+  email: string;
+  password: string;
+  errorMessage: string | null;
+}
+
+export interface FormData {
+  name: string;
+  email: string;
+  password: string;
+}

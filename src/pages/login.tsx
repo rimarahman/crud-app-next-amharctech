@@ -3,25 +3,18 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-
-interface FormData {
-  email: string;
-  password: string;
-  errorMessage: string | null;
-}
+import { LoginFormData } from "@/ts/interfaces";
 
 function LoginForm() {
   const router = useRouter();
 
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<LoginFormData>({
     email: "",
     password: "",
     errorMessage: null,
   });
 
-  const handleInputChange = (
-    e: ChangeEvent<HTMLInputElement>
-  ): void => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -31,28 +24,28 @@ function LoginForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-  
+
     const userData = {
       email: formData.email,
       password: formData.password,
     };
     console.log(userData);
-    
+
     try {
       const result = await signIn("credentials", {
         redirect: false,
-        username:userData.email,
+        username: userData.email,
         password: userData.password,
       });
       console.log("result", result);
-      
+
       if (result?.error) {
         console.error("Login error:", result.error);
-      } else{
-        router.push("/userNotes"); 
+      } else {
+        router.push("/userNotes");
       }
     } catch (error) {
-      console.error('Error during login:', error);
+      console.error("Error during login:", error);
     }
   };
 
@@ -98,7 +91,7 @@ function LoginForm() {
         </form>
         <Box className="mt-4">
           <p>
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/signUp" legacyBehavior>
               <a className="text-blue-500">Sign up</a>
             </Link>

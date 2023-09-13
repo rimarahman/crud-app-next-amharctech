@@ -43,10 +43,10 @@ export default function UserNotes() {
   const visibleNotes = notesData.slice(startIndex, endIndex);
 
   useEffect(() => {
-    if (status==="unauthenticated") {
+    if (status === "unauthenticated") {
       router.push("/login");
     }
-  });
+  }, [status]);
 
   const handlePagination = (page: number) => {
     setCurrentPage(page);

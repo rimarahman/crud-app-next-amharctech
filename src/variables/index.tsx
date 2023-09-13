@@ -1,3 +1,5 @@
+export const API_URL = "http://localhost:3001";
+
 export const notesData = [
   {
     title: "Grocery List",
@@ -92,5 +94,3 @@ export const notesData = [
   },
   // Add more notes as needed
 ];
-
-
