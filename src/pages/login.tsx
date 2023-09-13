@@ -29,7 +29,7 @@ function LoginForm() {
       email: formData.email,
       password: formData.password,
     };
-    console.log(userData);
+    
 
     try {
       const result = await signIn("credentials", {
@@ -37,7 +37,7 @@ function LoginForm() {
         username: userData.email,
         password: userData.password,
       });
-      console.log("result", result);
+      
 
       if (result?.error) {
         console.error("Login error:", result.error);

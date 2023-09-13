@@ -100,7 +100,7 @@ export default function UserNotes() {
     setNoteToDelete(undefined);
     setShowDeleteDialog(false);
   };
-  console.log("status", status);
+  
   return status === ("loading" || "unauthenticated") ? (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="animate-spin rounded-full border-t-4 border-blue-500 border-solid h-16 w-16"></div>
